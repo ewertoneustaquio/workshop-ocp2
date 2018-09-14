@@ -1,4 +1,5 @@
-<?php
-echo "<h1>Openshift Workshop v1.0</h1> ";
-echo $_SERVER['SERVER_ADDR'];
-?>
+FROM registry.access.redhat.com/rhscl/php-70-rhel7
+
+RUN echo "<h1>Meu Dockerfile</h1>" > /opt/app-root/src/index.php
+
+CMD ["container-entrypoint", "/usr/libexec/s2i/run"]
